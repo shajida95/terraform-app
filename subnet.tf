@@ -3,7 +3,7 @@ resource "aws_subnet" "public_subnet" {
     vpc_id = "${aws_vpc.vpc.id}"
     cidr_block = "10.0.0.0/24"
     map_public_ip_on_launch = true
-    availability_zone = "eu-west-2a"
+    availability_zone = "us-east-1a"
 
     tags = {
         Name = "tampublicsubnet"
@@ -31,7 +31,7 @@ resource "aws_route_table_association" "public_subnet_association" {
 resource "aws_subnet" "private_subnet" {
     vpc_id = "${aws_vpc.vpc.id}"
     cidr_block = "10.0.1.0/24"
-    availability_zone = "eu-west-2b"
+    availability_zone = "us-east-1b"
 
     tags = {
         Name = "tamprivatesubnet"
@@ -59,7 +59,7 @@ resource "aws_route_table_association" "private_subnet_association" {
 resource "aws_subnet" "private_subnet1" {
     vpc_id = "${aws_vpc.vpc.id}"
     cidr_block = "10.0.2.0/24"
-    availability_zone = "eu-west-2c"
+    availability_zone = "us-east-1c"
     tags = {
         Name = "tamprivatesubnet1"
     }
